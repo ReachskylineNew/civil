@@ -2471,8 +2471,251 @@ a {
     color: var(--primary-blue);
 }
 
+/* ===================================
+   VM SECTION HEADER
+   =================================== */
+.vm-section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
 
+.vm-section-header .section-badge {
+    margin-bottom: 1rem;
+}
 
+/* ===================================
+   VISION & MISSION FLIP CARDS
+   =================================== */
+.vm-flip-cards-row {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.vm-flip-card {
+    flex: 1 1 300px;
+    max-width: 480px;
+    height: 320px;
+    perspective: 1200px;
+    cursor: pointer;
+}
+
+.vm-flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.vm-flip-card:hover .vm-flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.vm-flip-card-front,
+.vm-flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Vision Front */
+.vision-front {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #3b82f6 100%);
+    color: white;
+}
+
+/* Mission Front */
+.mission-front {
+    background: linear-gradient(135deg, #0f172a 0%, var(--primary-blue) 100%);
+    color: white;
+}
+
+.vm-card-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+.vm-card-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.5rem;
+    font-family: var(--heading-font);
+}
+
+.vm-card-hint {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+/* Vision Back */
+.vision-back {
+    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+    color: var(--slate-900);
+    transform: rotateY(180deg);
+    text-align: center;
+}
+
+/* Mission Back */
+.mission-back {
+    background: linear-gradient(135deg, #1e293b 0%, var(--slate-800) 100%);
+    color: white;
+    transform: rotateY(180deg);
+    text-align: left;
+    overflow-y: auto;
+}
+
+.vm-back-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    font-family: var(--heading-font);
+}
+
+.vision-back .vm-back-title {
+    color: var(--slate-900);
+}
+
+.mission-back .vm-back-title {
+    color: var(--accent-gold);
+}
+
+.vm-back-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--slate-900);
+}
+
+.vm-back-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.vm-back-list li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.6rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.vm-back-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-gold);
+    font-weight: 700;
+}
+
+/* ===================================
+   UNIQUE FEATURES SECTION
+   =================================== */
+.unique-features-section {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.unique-features-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    margin-bottom: 2rem;
+    font-family: var(--heading-font);
+    text-align: center;
+}
+
+.unique-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.unique-feature-item {
+    background: linear-gradient(135deg, #f8fafc, #ffffff);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.unique-feature-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(30, 64, 175, 0.12);
+    border-color: var(--primary-blue);
+}
+
+.uf-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.unique-feature-item p {
+    font-size: 0.95rem;
+    color: var(--slate-800);
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+}
+
+/* ===================================
+   RESPONSIVE: VM FLIP CARDS & FEATURES
+   =================================== */
+@media (max-width: 768px) {
+    .vm-flip-cards-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vm-flip-card {
+        width: 100%;
+        max-width: 100%;
+        height: 300px;
+    }
+
+    .vm-card-title {
+        font-size: 1.6rem;
+    }
+
+    .unique-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .unique-features-title {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .unique-features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vm-flip-card {
+        height: 280px;
+    }
+}
 
 /* ===================================
    PROGRAMS MODERN (CARDS)
