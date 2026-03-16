@@ -1286,6 +1286,42 @@ h6 {
     color: var(--slate-900);
 }
 
+.btn-wizard-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Required star indicator */
+.required-star {
+    color: #ef4444;
+    margin-left: 2px;
+}
+
+/* Phone field hint text */
+.field-hint {
+    font-size: 0.78rem;
+    color: var(--dark-gray);
+    margin-top: 0.25rem;
+    opacity: 0.8;
+}
+
+/* Contact enquiry form — single-page layout */
+.contact-enquiry-form .wizard-step {
+    display: block !important;
+}
+
+.contact-enquiry-form .wizard-actions {
+    justify-content: center;
+}
+
+.contact-enquiry-form .btn-wizard-submit {
+    min-width: 220px;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+}
+
 /* ===================================
    FOOTER (Same as Law Dept)
    =================================== */
